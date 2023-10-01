@@ -4,14 +4,20 @@ $body-bgc-blue: #DAF2FF;
 $body-bgc-lightblue: #EDF8FF;
 $text-icon-black: #3E4B6D;
 $border-light-gray: #e2e2e2;
-$ope-card-blue:#B9F2FF;
-$status-green:#8CFF98;
-$status-yellow:#FFF48C;
+$ope-card-blue: #B9F2FF;
+$status-green: #8CFF98;
+$status-yellow: #FFF48C;
 
 //reset
-body,div,span,a,p{
+body,
+div,
+span,
+a,
+p {
     font-family: "Inter";
+    outline: none;
 }
+
 body {
     margin: 0;
     font-family: "Inter";
@@ -43,7 +49,7 @@ body {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin-right: 10px;
+                margin-right: 20px;
             }
 
             p {
@@ -61,7 +67,7 @@ body {
             .icon-container {
                 display: flex;
                 align-items: center;
-                margin-right: 16px;
+                margin-right: 20px;
             }
 
             .account-container {
@@ -72,6 +78,8 @@ body {
                 justify-content: center;
                 border: 1px solid gray;
                 margin-right: 16px;
+                background-image: url('./icon_test.png');
+                background-size: cover;
             }
 
             #hamburger {
@@ -309,7 +317,7 @@ body {
             th,
             td {
                 writing-mode: horizontal-tb;
-                width: 100px;
+                width: 140px;
                 height: 42px;
                 vertical-align: middle;
                 border: none;
@@ -345,20 +353,22 @@ body {
             tr {
                 position: relative;
 
-                .point{
+                .point {
                     height: 0px;
-                    .cell-container{
+
+                    .cell-container {
                         border: none;
                     }
                 }
-                .ope-card{
+
+                .ope-card {
                     position: absolute;
                     width: inherit;
                     border-radius: 6px;
                     background-color: $ope-card-blue;
-                    box-shadow: inset -1px -1px 2px 1px rgba(black,0.1);
+                    box-shadow: inset -1px -1px 2px 1px rgba(black, 0.1);
 
-                    .status-icon{
+                    .status-icon {
                         position: absolute;
                         right: 4px;
                         top: 3px;
@@ -367,28 +377,33 @@ body {
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        box-shadow: inset 0px 0px 2px 1px rgba(black,0.1);
+                        box-shadow: inset 0px 0px 2px 1px rgba(black, 0.1);
                         border-radius: 9px;
                         background-color: $status-green;
-                        svg{
+
+                        svg {
                             width: 80%;
                         }
                     }
-                    .ope-item-container{
+
+                    .ope-item-container {
                         display: flex;
                         justify-content: flex-start;
                         margin-top: 2px;
-                        svg{
+
+                        svg {
                             height: 18px;
                             margin-left: 2px;
                         }
-                        .ope-customer-name{
+
+                        .ope-customer-name {
                             font-size: 10px;
                             line-height: 18px;
                             margin-left: 4px;
                         }
                     }
                 }
+
                 &:nth-of-type(2) {
                     td:nth-of-type(2) {
                         .cell-container {
@@ -404,6 +419,12 @@ body {
                     }
                 }
 
+                &:first-of-type{
+                    th{
+                        background: linear-gradient(to bottom, rgba($body-bgc-lightblue,100%) 40%, rgba($body-bgc-lightblue, 0%) 40%);
+                    }
+                }
+
                 td:last-of-type {
                     .cell-container {
                         border-bottom: 1px solid lightgray;
@@ -412,7 +433,7 @@ body {
 
                 &:last-of-type {
                     td {
-                        .cell-container{
+                        .cell-container {
                             border-right: 1px solid lightgray;
                         }
 
@@ -450,6 +471,8 @@ body {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    position: relative;
+                    top: -6px;
                     font-size: 12px;
                     height: 32px;
                     color: $text-icon-black;
@@ -661,7 +684,7 @@ body {
                 color: white;
                 font-size: 11px;
                 line-height: 11px;
-                text-decoration: none;
+                outline: none;
             }
         }
     }
