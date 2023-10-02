@@ -4,7 +4,6 @@ span,
 a,
 p {
   font-family: "Inter";
-  outline: none;
 }
 
 body {
@@ -12,8 +11,16 @@ body {
   font-family: "Inter";
 }
 
+a,
 p {
   margin: 0;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+a:focus {
+  outline: none;
 }
 
 body {
@@ -77,7 +84,7 @@ body header #sp-nav {
   display: flex;
   z-index: 1000;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   transition: 0.4s all ease;
 }
 body header #sp-nav .sp-nav-container {
@@ -159,7 +166,7 @@ body main {
   background-color: #EDF8FF;
   width: 96%;
   border-radius: 16px;
-  height: calc(100vh - 110px);
+  height: calc(100svh - 110px);
   margin: 0 auto;
 }
 body main .page-header {
@@ -241,7 +248,6 @@ body main .main-content-wrapper::-webkit-scrollbar {
   display: none;
 }
 body main .main-content {
-  height: 1050px;
   border-collapse: collapse;
   writing-mode: vertical-lr;
   border-spacing: 0px;
@@ -345,8 +351,21 @@ body main .main-content tr:nth-of-type(2) td:last-of-type .cell-container {
   border-radius: 0px 0px 0px 6px;
   border-bottom: 1px solid lightgray;
 }
-body main .main-content tr:first-of-type th {
-  background: linear-gradient(to bottom, #edf8ff 40%, rgba(237, 248, 255, 0) 40%);
+body main .main-content tr:first-of-type .fixed01:first-of-type {
+  z-index: 3;
+  background-color: initial;
+}
+body main .main-content tr:first-of-type .fixed01:first-of-type .pad-container {
+  width: 100%;
+  height: 100%;
+}
+body main .main-content tr:first-of-type .fixed01:first-of-type .pad {
+  width: calc(100% + 30px);
+  background: #EDF8FF;
+  height: calc(100% - 12px);
+}
+body main .main-content tr:first-of-type th:first-of-type {
+  background: linear-gradient(to bottom, #edf8ff 50%, rgba(237, 248, 255, 0) 50%);
 }
 body main .main-content tr td:last-of-type .cell-container {
   border-bottom: 1px solid lightgray;
@@ -367,12 +386,7 @@ body main .main-content .fixed02 {
   left: 0;
   background: #EDF8FF;
 }
-body main .main-content .fixed01 {
-  z-index: 2;
-}
-body main .main-content .fixed02 {
-  z-index: 1;
-}
+body main .main-content .fixed01 .cell,
 body main .main-content .fixed02 .cell {
   display: flex;
   justify-content: center;
@@ -382,6 +396,12 @@ body main .main-content .fixed02 .cell {
   font-size: 12px;
   height: 32px;
   color: #3E4B6D;
+}
+body main .main-content .fixed01 {
+  z-index: 2;
+}
+body main .main-content .fixed02 {
+  z-index: 1;
 }
 body main #timesheet-container {
   width: 98%;

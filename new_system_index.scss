@@ -15,7 +15,6 @@ span,
 a,
 p {
     font-family: "Inter";
-    outline: none;
 }
 
 body {
@@ -23,8 +22,17 @@ body {
     font-family: "Inter";
 }
 
+a,
 p {
     margin: 0;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+
+    &:focus {
+        outline: none;
+    }
 }
 
 //style
@@ -97,7 +105,7 @@ body {
             display: flex;
             z-index: 1000;
             width: 100vw;
-            height: 100vh;
+            height: 100dvh;
             transition: .4s all ease;
 
             .sp-nav-container {
@@ -198,7 +206,7 @@ body {
         background-color: $body-bgc-lightblue;
         width: 96%;
         border-radius: 16px;
-        height: calc(100vh - 110px);
+        height: calc(100svh - 110px);
         margin: 0 auto;
 
         .page-header {
@@ -293,7 +301,6 @@ body {
         }
 
         .main-content {
-            height: 1050px;
             border-collapse: collapse;
             writing-mode: vertical-lr;
             border-spacing: 0px;
@@ -419,9 +426,22 @@ body {
                     }
                 }
 
-                &:first-of-type{
-                    th{
-                        background: linear-gradient(to bottom, rgba($body-bgc-lightblue,100%) 40%, rgba($body-bgc-lightblue, 0%) 40%);
+                &:first-of-type {
+                    .fixed01:first-of-type{
+                        z-index:3;
+                        background-color: initial;
+                        .pad-container{
+                            width: 100%;
+                            height: 100%;
+                        }
+                        .pad{
+                            width: calc(100% + 30px);
+                            background: $body-bgc-lightblue;
+                            height: calc(100% - 12px);
+                        }
+                    }
+                    th:first-of-type {
+                        background: linear-gradient(to bottom, rgba($body-bgc-lightblue, 100%) 50%, rgba($body-bgc-lightblue, 0%) 50%);
                     }
                 }
 
@@ -458,15 +478,6 @@ body {
                 top: 0;
                 left: 0;
                 background: $body-bgc-lightblue;
-            }
-
-            .fixed01 {
-                z-index: 2;
-            }
-
-            .fixed02 {
-                z-index: 1;
-
                 .cell {
                     display: flex;
                     justify-content: center;
@@ -477,6 +488,14 @@ body {
                     height: 32px;
                     color: $text-icon-black;
                 }
+            }
+
+            .fixed01 {
+                z-index: 2;
+            }
+
+            .fixed02 {
+                z-index: 1;
             }
         }
 
