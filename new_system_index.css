@@ -23,10 +23,6 @@ a:focus {
   outline: none;
 }
 
-p {
-  margin: 0;
-}
-
 body {
   overflow: hidden;
   background-color: #DAF2FF;
@@ -41,12 +37,12 @@ body header {
 body header .header-flex-left {
   display: flex;
   align-items: center;
-  margin-left: 14px;
 }
 body header .header-flex-left .logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 20px;
 }
 body header .header-flex-left .page-name {
   font-size: 16px;
@@ -62,7 +58,7 @@ body header .header-flex-right {
 body header .header-flex-right .icon-container {
   display: flex;
   align-items: center;
-  margin-right: 16px;
+  margin-right: 20px;
 }
 body header .header-flex-right .account-container {
   width: 28px;
@@ -73,7 +69,6 @@ body header .header-flex-right .account-container {
   border: 1px solid gray;
   margin-right: 16px;
   background-color: rgb(177, 204, 243);
-  background-size: cover;
 }
 body header .header-flex-right #hamburger {
   display: flex;
@@ -387,6 +382,22 @@ body main .main-content tr:nth-of-type(2) td:last-of-type .cell-container {
   border-radius: 0px 0px 0px 6px;
   border-bottom: 1px solid lightgray;
 }
+body main .main-content tr:first-of-type .fixed01:first-of-type {
+  z-index: 3;
+  background-color: initial;
+}
+body main .main-content tr:first-of-type .fixed01:first-of-type .pad-container {
+  width: 100%;
+  height: 100%;
+}
+body main .main-content tr:first-of-type .fixed01:first-of-type .pad {
+  width: calc(100% + 30px);
+  background: #EDF8FF;
+  height: calc(100% - 12px);
+}
+body main .main-content tr:first-of-type th:first-of-type {
+  background: linear-gradient(to bottom, #edf8ff 50%, rgba(237, 248, 255, 0) 50%);
+}
 body main .main-content tr td:last-of-type .cell-container {
   border-bottom: 1px solid lightgray;
 }
@@ -406,19 +417,22 @@ body main .main-content .fixed02 {
   left: 0;
   background: #EDF8FF;
 }
+body main .main-content .fixed01 .cell,
+body main .main-content .fixed02 .cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -6px;
+  font-size: 12px;
+  height: 32px;
+  color: #3E4B6D;
+}
 body main .main-content .fixed01 {
   z-index: 2;
 }
 body main .main-content .fixed02 {
   z-index: 1;
-}
-body main .main-content .fixed02 .cell {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 12px;
-  height: 32px;
-  color: #3E4B6D;
 }
 body main #timesheet-container {
   width: 98%;
@@ -585,7 +599,7 @@ body footer .footer-item-container a {
   color: white;
   font-size: 11px;
   line-height: 11px;
-  text-decoration: none;
+  outline: none;
 }
 body .footer-controller-panel {
   height: 45px;

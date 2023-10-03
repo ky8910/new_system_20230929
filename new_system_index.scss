@@ -35,10 +35,6 @@ a {
     -webkit-tap-highlight-color: transparent;
 }
 
-p {
-    margin: 0;
-}
-
 //style
 
 body {
@@ -55,12 +51,12 @@ body {
         .header-flex-left {
             display: flex;
             align-items: center;
-            margin-left: 14px;
 
             .logo-container {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                margin-right: 20px;
             }
 
             .page-name {
@@ -79,7 +75,7 @@ body {
             .icon-container {
                 display: flex;
                 align-items: center;
-                margin-right: 16px;
+                margin-right: 20px;
             }
 
             .account-container {
@@ -91,7 +87,6 @@ body {
                 border: 1px solid gray;
                 margin-right: 16px;
                 background-color: rgb(177, 204, 243);
-                background-size: cover;
             }
 
             #hamburger {
@@ -466,6 +461,25 @@ body {
                     }
                 }
 
+                &:first-of-type {
+                    .fixed01:first-of-type{
+                        z-index:3;
+                        background-color: initial;
+                        .pad-container{
+                            width: 100%;
+                            height: 100%;
+                        }
+                        .pad{
+                            width: calc(100% + 30px);
+                            background: $body-bgc-lightblue;
+                            height: calc(100% - 12px);
+                        }
+                    }
+                    th:first-of-type {
+                        background: linear-gradient(to bottom, rgba($body-bgc-lightblue, 100%) 50%, rgba($body-bgc-lightblue, 0%) 50%);
+                    }
+                }
+
                 td:last-of-type {
                     .cell-container {
                         border-bottom: 1px solid lightgray;
@@ -499,6 +513,16 @@ body {
                 top: 0;
                 left: 0;
                 background: $body-bgc-lightblue;
+                .cell {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    top: -6px;
+                    font-size: 12px;
+                    height: 32px;
+                    color: $text-icon-black;
+                }
             }
 
             .fixed01 {
@@ -507,15 +531,6 @@ body {
 
             .fixed02 {
                 z-index: 1;
-
-                .cell {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-size: 12px;
-                    height: 32px;
-                    color: $text-icon-black;
-                }
             }
         }
 
@@ -722,7 +737,7 @@ body {
                 color: white;
                 font-size: 11px;
                 line-height: 11px;
-                text-decoration: none;
+                outline: none;
             }
         }
     }
